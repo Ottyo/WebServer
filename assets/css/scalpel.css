@@ -1,0 +1,385 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #C0B3A0;
+  animation: dayToNight 120s linear infinite;
+}
+
+@font-face {
+    font-family: cool;
+    src: url("./coolvetica/coolvetica.ttf");
+}
+
+a:visited { text-decoration: none;}
+a:hover { text-decoration: none; color: black;}
+a:focus { text-decoration: none;}
+a:hover, a:active { text-decoration: none;}
+
+
+.topTitle {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scalpel {
+  font-size: 10vh;
+  color: black;
+}
+
+.subTitle {
+  font-size: 5vh;
+  color: black;  
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fade-in.one {
+  -webkit-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+.button {
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: white;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: black;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+
+.popup .content {
+  max-height: 100%;
+  overflow: auto;
+}
+
+.flexbox-hor {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.planDescriptor {
+  width: 50%;
+  margin-top: 20px;
+  text-align: center;
+ }
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.characterContainer, .titleContainer {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin-left: 25%;
+  bottom: 17%;
+  position: absolute;
+  width: 50%;
+  height: 10%;
+}
+
+.titleContainer {
+  height: auto;
+  bottom: 28%;
+}
+
+.character {
+  background: transparent;
+  height: 100%;
+  -webkit-transition: width 2s;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.character:hover {
+  height: 125%;
+}
+
+.dino {
+  background: transparent;
+  height: 125%;
+  -webkit-transition: width 2s;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.dino:hover {
+  height: 145%;
+}
+
+.nickname {
+  color: black;
+  text-align: center;
+  cursor: pointer;
+}
+
+.paralax {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: url("http://www.testomic.com/public/codepen-assets/img/paralax/background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.paralax .layer {
+  position: absolute;
+  width: 400%;
+}
+
+.paralax .foreground {
+  height: 50%;
+  bottom: 0;
+  background: url("http://www.testomic.com/public/codepen-assets/img/paralax/foreground.png") repeat-x;
+  background-size: 25% 100%;
+  animation: slideshow 30s linear infinite;
+}
+
+.paralax .hills {
+  height: 40%;
+  bottom: 15%;
+  background: url("http://www.testomic.com/public/codepen-assets/img/paralax/hills.png") repeat-x;
+  background-size: 25% 100%;
+  animation: slideshow 60s linear infinite;
+}
+
+.paralax .rocks1 {
+  height: 35%;
+  bottom: 25%;
+  background: url("http://www.testomic.com/public/codepen-assets/img/paralax/rocks1.png") repeat-x;
+  background-size: 25% 100%;
+  animation: slideshow 120s linear infinite;
+}
+
+.paralax .rocks2 {
+  height: 40%;
+  bottom: 15%;
+  background: url("http://www.testomic.com/public/codepen-assets/img/paralax/rocks2.png") repeat-x;
+  background-size: 25% 100%;
+  animation: slideshow 240s linear infinite;
+}
+
+@keyframes slideshow {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -200%;
+  }
+}
+@keyframes dayToNight {
+  0% {
+    -webkit-filter: hue-rotate(0deg) brightness(1);
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  50% {
+    -webkit-filter: hue-rotate(180deg) brightness(0.5);
+    filter: hue-rotate(180deg) brightness(0.5);
+  }
+  100% {
+    -webkit-filter: hue-rotate(0deg) brightness(1);
+    filter: hue-rotate(0deg) brightness(1);
+  }
+}
+/**	
+* Nonatomic Branding
+*/
+#link {
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  bottom: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.img-url {
+  text-decoration: none;
+}
+
+.url {
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: purple;
+}
+
+a:active {
+  color: white;
+}
+
+#small-logo {
+  width: 30px;
+  transform: translate(-10px, 12px);
+  opacity: 1;
+}
+
+:root {
+  --animation-delay: 2s;
+  --duration: 800ms;
+  --iterations: 1;
+}
+
+.reveal-text,
+.reveal-text::after {
+  animation-delay: var(--animation-delay);
+  animation-iteration-count: var(--iterations);
+  animation-duration: var(--duration);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.reveal-text {
+  position: relative;
+  font-size: 10vw;
+  display: block;
+  user-select: none;
+  animation-name: reveal-text;
+  color: black;
+  white-space: nowrap;
+  font-size: 7vh;
+  cursor: default;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f2f98b;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    pointer-events: none;
+    animation-name: revealer-text;
+  }
+  
+}
+
+
+@keyframes reveal-text {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+
+@keyframes revealer-text {
+  
+  0%, 50% {
+    transform-origin: 0 50%;
+  }
+  
+  60%, 100% {
+    transform-origin: 100% 50%;   
+  }
+
+  
+  60% {
+    transform: scaleX(1);
+  }
+  
+  100% {
+    transform: scaleX(0);
+  }
+}

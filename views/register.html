@@ -1,0 +1,182 @@
+<style type="text/css">
+        body {
+            background-color: #DADADA;
+        }
+
+        body > .grid {
+            height: 100%;
+        }
+
+        .image {
+            margin-top: -100px;
+        }
+
+        .column {
+            max-width: 450px;
+        }
+        .field label {
+            font-size : 1.5em !important;
+        }
+</style>
+
+<!DOCTYPE html>
+<html ng-app="ui.bootstrap.scalpel">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui, user-scalable=no"/>
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/semantic.min.css">
+
+
+    <!-- Angular import -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-messages.min.js"></script>
+
+    <!-- Angular Material Import -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="../assets/js/bootstrap-colorpicker-module.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <link rel="stylesheet" href="../assets/css/advanced_search.css"/>
+    <link rel="stylesheet" href="../assets/css/colorpicker.css"/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../assets/css/animate.min.css" rel="stylesheet" />
+    <link href="../assets/css/style.min.css" rel="stylesheet" />
+    <link href="../assets/css/style-responsive.min.css" rel="stylesheet" />
+    <link href="../assets/css/theme/default.css" id="theme" rel="stylesheet" />
+
+
+
+    <title>S'inscrire</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content=""/>
+    <meta name="generator" content="concrete5 - 5.7.5.9"/>
+
+
+    <script src="//code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="../assets/js/advanced_search.js"></script>
+
+
+
+</head>
+<body>
+    <div class="ui middle aligned center aligned grid back-login-img background-img">
+        <div class="column">
+            <h2 class="ui teal image header">
+                <img src="../assets/img/logo_trans.png" class="image">
+                <div class="content">
+                    S'inscrire
+                </div>
+            </h2>
+            <form class="ui large form" name="auth" method="POST" action="register">
+                <div class="field">
+                    <label>Prénom</label>
+                    <input type="text" name="firstname" placeholder="Prénom">
+                </div>
+                <div class="field">
+                    <label>Nom</label>
+                    <input type="text" name="lastname" id="lastname" placeholder="Nom">
+                </div>
+                <div class="field">
+                    <label>Age</label>
+                    <input type="text" name="birthday" id="birthday" placeholder="Age">
+                </div>
+                <div class="field">
+                    <label>Adresse</label>
+                    <input type="text" name="adress" id="adress" placeholder="Adresse">
+                </div>
+                <div class="field">
+                    <label>Ville</label>
+                    <input type="text" name="city" id="city" placeholder="Ville">
+                </div>
+                <div class="field">
+                    <label>Téléphone</label>
+                    <input type="text" name="phone" id="phone" placeholder="Téléphone">
+                </div>
+                <div class="field">
+                    <label>Code Postal</label>
+                    <input type="text" name="postcode" id="postcode" placeholder="Code Postal">
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input type="text" name="email" id="email" placeholder="Email">
+                </div>
+                <div class="field">
+                    <label>Pseudo</label>
+                    <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo">
+                </div>
+                <div class="field">
+                    <label>Mot de passe</label>
+                    <input type="password" name="password" id="password" onchange='subConfirm();' onkeyup="passConfirm();">
+                </div>
+                <div class="field">
+                    <label>Confirmer le mot de passe</label>
+                    <input type="password" name="password2" id="password2" onchange='subConfirm();' onkeyup="passConfirm();">
+                    <span id="message"></span>
+                </div>
+                <input type="submit" name="submit"  value="Valider"  id="submit" disabled/>
+            </form>
+            <div class="ui message">
+                Déjà inscrit? <a href="{% url 'main:login' %}">Connexion</a>
+            </div>
+        </div>
+    </div>
+        <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Inscription réussis</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Votre compte est désormais activé. Vous pouvez maintenant vous connecter !
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{% url 'main:login' %}">Se connecter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<script type="text/javascript">
+
+function subConfirm() {
+    if (document.getElementById('password').value ==
+            document.getElementById('password2').value) {
+        document.getElementById('submit').disabled = false;
+    } else {
+        document.getElementById('submit').disabled = true;
+    }
+};
+
+var passConfirm = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('password2').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'Mots de passe identiques!';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'Mots de passe différents!';
+  }
+};
+
+</script>
+<footer>
+</footer>

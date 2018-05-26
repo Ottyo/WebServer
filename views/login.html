@@ -1,0 +1,166 @@
+ <style>
+     body {
+            background-color: #DADADA;
+        }
+
+        body > .grid {
+            height: 100%;
+        }
+
+        .image {
+            margin-top: -100px;
+        }
+
+        .column {
+            max-width: 450px;
+        }
+        .my_form {
+            background-color: transparent !important;
+            border: none !important;
+        }
+        .ui.stacked.segment:after, .ui.stacked.segment:before, .ui.stacked.segments:after, .ui.stacked.segments:before {
+            border-top: none !important;
+            background: none !important;
+        }
+        .ui.segment {
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+        }
+        .bouton {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            color: navy !important;
+            font-size: 1.3em !important;
+            font-weight: bold !important;
+        }
+        a:link {
+            color: black !important;
+        }
+        a:hover {
+            color: pink !important;
+        }
+        .content {
+            color: navy !important;
+            font-size: 1.5em !important;
+        }
+        .envoyer {
+            border: none !important;
+            box-shadow: none !important;
+            color: navy !important;
+            font-size: 1.3em !important;
+            transition-duration: 0.4s;
+        }
+ </style>
+<!DOCTYPE html>
+<html ng-app="ui.bootstrap.scalpel">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui, user-scalable=no"/>
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/semantic.min.css">
+
+
+    <!-- Angular import -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-messages.min.js"></script>
+
+    <!-- Angular Material Import -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="../assets/js/bootstrap-colorpicker-module.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <link rel="stylesheet" href="../assets/css/advanced_search.css"/>
+    <link rel="stylesheet" href="../assets/css/colorpicker.css"/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../assets/css/animate.min.css" rel="stylesheet" />
+    <link href="../assets/css/style.min.css" rel="stylesheet" />
+    <link href="../assets/css/style-responsive.min.css" rel="stylesheet" />
+    <link href="../assets/css/theme/default.css" id="theme" rel="stylesheet" />
+
+
+
+    <title>Login</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content=""/>
+    <meta name="generator" content="concrete5 - 5.7.5.9"/>
+
+
+    <script src="//code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="../assets/js/advanced_search.js"></script>
+
+
+
+</head>
+<body>
+    <div class="ui middle aligned center aligned grid back-login-img background-img">
+        <div class="column">
+            <h2 class="ui teal image header">
+                <img src="../assets/img/logo_trans.png" class="image">
+                <div class="content">
+                    Se connecter
+                </div>
+            </h2>
+            <form class="ui large form" method="POST" action="/login">
+                <div class="ui stacked segment my_form">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <input type="text" name="email" placeholder="Adresse email">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" name="password" placeholder="Mot de passe">
+                        </div>
+                    </div>
+                <button class="ui button envoyer" type="submit">Envoyer</button>
+                </div>
+            </form>
+            <div class="ui message bouton">
+                Vous êtes nouveau? <a href="{% url 'main:register' %}">S'inscrire</a>
+            </div>
+            <div class="ui message bouton">
+                <a href="{% url 'main:reset_password' %}">Mot de passe oublié</a>
+            </div>
+            <div class="ui message bouton">
+                <a href="{% url 'main:home' %}">Retour à l'accueil</a>
+            </div>
+        </div>
+    </div>
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Email - Mot de passe incorrect</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        La combinaison email mot de passe est incorrect.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ressayer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </body>
+        <footer>
+        </footer>

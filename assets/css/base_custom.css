@@ -1,0 +1,130 @@
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+    opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+
+.paginadiv {
+    display: block;
+    width:50%;
+    margin: auto 43%;
+}
+
+a {
+    text-decoration: none;
+}
+
+#footer .infos {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 50% 50% 0 0;
+    background: #101010;
+    width: 3em;
+    height: 3em;
+    margin-bottom: -1.75em;
+    color: #FFF;
+    font-size: 1.25em;
+    padding-top: .35em;
+}
+
+#footer .info {
+    background: #101010;
+}
+
+#footer .inner {
+    background: #101010;
+}
+
+#footer .infos span {
+    display: none;
+}
+
+strong {
+    font-size: 35px;
+}
+
+.strongbeter {
+    color: #2aabd2;
+}
+
+.arrowpag {
+    border: none;
+}
+
+.videomm {
+    width: 100%;
+}
+
+.navbar {
+    margin-bottom: 0px;
+    border-radius: 0px;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#011c26),to(#001016));
+    background-image: linear-gradient(to bottom,#011c26 0,#001016 100%);
+}
+
+body {
+    line-height: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .logo_navbar {
+        width: 27%;
+    }
+
+    #bs-example-navbar-collapse-9{
+    float:right;
+    position:relative;
+    left:-50%;
+    text-align:left;
+}
+#bs-example-navbar-collapse-9 ul{
+    list-style:none;
+    position:relative;
+    left:50%;
+}
+
+#bs-example-navbar-collapse-9 li{float:left;position:relative;}/* ie needs position:relative here*/
+
+#bs-example-navbar-collapse-9 a{
+    text-decoration:none;
+    margin:10px;
+    float:left;
+    padding:2px 5px;
+    text-align:center;
+    white-space:nowrap;
+}
+#content{overflow:hidden}/* hide horizontal scrollbar*/
+}
+
+@media screen and (max-width: 768px) {
+    .logo_navbar {
+        width: 32%;
+    }
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+.loadmore {
+    margin-left: 47%;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}

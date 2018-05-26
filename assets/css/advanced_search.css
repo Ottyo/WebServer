@@ -1,0 +1,142 @@
+@media (min-width: 1600px) {
+    .col-md-border:not(:last-child) {
+        border-right: 1px solid #d7d7d7;
+    }
+    .col-md-border + .col-md-border {
+        border-left: 1px solid #d7d7d7;
+        margin-left: -1px;
+    }
+}
+
+@media (max-width: 1599px) {
+    .col-md-border:not(:last-child) {
+        border-bottom: 1px solid #d7d7d7;
+    }
+    .col-md-border + .col-md-border {
+        border-bottom: 1px solid #d7d7d7;
+        margin-bottom: -1px;
+    }
+}
+
+.features-search {
+    display: flex;
+}
+
+.person-move {
+    position: relative;
+    top: 26px;
+}
+
+.person-move.person-move-active {
+    transition: all 0.5s ease;
+    top: 0;
+}
+
+.person-move + div {
+    /* cannot have transition on this element */
+    /*transition: all 1s ease;*/
+    position: relative;
+    top: -26px;
+}
+
+.person-move.person-move-active + div {
+    transition: all 0.5s ease;
+    position: relative;
+    top: 0;
+}
+
+.person-enter {
+    position: relative;
+    opacity: 0.0;
+    height: 0;
+    left: 100px;
+}
+
+.person-enter.person-enter-active {
+    transition: all 0.5s ease;
+    opacity: 1.0;
+    left: 0;
+    height: 26px;
+}
+
+
+.person-leave {
+    position: relative;
+    opacity: 1.0;
+    left: 0;
+    height: 26px;
+    z-index: -100;
+}
+
+.person-leave.person-leave-active {
+    transition: all 0.5s ease;
+    opacity: 0.0;
+    left: 100px;
+    height: 0;
+    top: -13px;
+}
+
+.spacing-color {
+    float: left;
+    overflow: hidden;
+    border: 4px solid black;
+}
+.spacing-color > .spacing-color {
+    width: 100px;
+    height: 100px;
+    border: 4px solid black;
+}
+.spacing-color > .spacing-color:nth-child(3n) {
+    clear: both;
+}
+
+.center-color {
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.spacing-color-parent {
+    display: block !important;
+    margin-left: auto !important;;
+    margin-right: auto !important;;
+}
+
+.material-icons {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.color-dominance {
+    height: 400px;
+    overflow-x: scroll;
+}
+
+.color-position {
+    height: 400px;
+}
+
+.dialogdemoBasicUsage #popupContainer {
+  position: relative; }
+
+.dialogdemoBasicUsage .footer {
+  width: 100%;
+  text-align: center;
+  margin-left: 20px; }
+
+.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+  font-size: 0.8em;
+  margin-top: 50px; }
+
+.dialogdemoBasicUsage button {
+  width: 200px; }
+
+.dialogdemoBasicUsage div#status {
+  color: #c60008; }
+
+.dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+  margin-bottom: 0; }
